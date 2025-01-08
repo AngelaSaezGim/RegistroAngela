@@ -38,7 +38,7 @@ fun SignInAngela(modifier: Modifier) {
                 )
             )
             .then(modifier),
-        verticalArrangement = Arrangement.Top,
+        verticalArrangement = Arrangement.Center,
     ) {
         Row(
             modifier = Modifier

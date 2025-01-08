@@ -25,51 +25,25 @@ import com.angelasaez.signinangela.R
 import com.angelasaez.signinangela.ui.screens.common.CustomSpacer
 
 @Composable
-fun SignInForm() {
+fun SendButton() {
 
-    //Scroll solo en el formulario
-    val scrollState = rememberScrollState()
-
-    Column(
+    Button(
+        onClick = { },
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
-            .border(2.dp, Color.Black)
-            .height(590.dp)
-            .verticalScroll(scrollState),
-        verticalArrangement = Arrangement.Center,
-    ){
-        //nombre
-        InputName()
-
-        // los apellidos - 2 (pero si dejas vacio no te da error)
-        InputSurname()
-
-        // el email
-        InputEmail()
-
-        // el número de teléfono
-        InputPhone()
-
-        // la fecha de nacimiento
-        InputBirth()
-
-        // una serie de elementos que se podrán seleccionar
-        // (6 elementos, FilterChips. elementos = películas).
-        InputMovies()
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(20.dp)
-        ){
-        //dos botones, uno para borrar todos los campos y otro para enviar el formulario.
-
-            SendButton()
-            CustomSpacer(width = 15)
-            ResetButton()
-
-        }
-
+            .padding(top = 6.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = colorResource(id = R.color.teal_700),
+            contentColor = Color.White
+        )
+    ) {
+        Text("Enviar")
+        CustomSpacer(width = 10)
+        Icon(
+            imageVector = Icons.Default.Add,
+            contentDescription = "send",
+            modifier = Modifier.size(20.dp)
+        )
     }
+
+
 }
