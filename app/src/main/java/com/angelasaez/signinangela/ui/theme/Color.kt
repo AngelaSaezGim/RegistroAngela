@@ -1,4 +1,4 @@
-package com.angelasaez.registroangela.ui.theme
+package com.angelasaez.signinangela.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

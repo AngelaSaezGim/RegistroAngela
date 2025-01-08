@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.angelasaez.registroangela"
+    namespace = "com.angelasaez.signinangela"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.angelasaez.registroangela"
+        applicationId = "com.angelasaez.signinangela"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RegistroAngela"
+rootProject.name = "SignInAngela"
 include(":app")
  

@@ -1,4 +1,4 @@
-package com.angelasaez.registroangela.ui.screens.common
+package com.angelasaez.signinangela.ui.screens.common
 
 
 import androidx.compose.foundation.layout.Spacer

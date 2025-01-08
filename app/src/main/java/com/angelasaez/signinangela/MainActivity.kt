@@ -1,19 +1,19 @@
-package com.angelasaez.registroangela
+package com.angelasaez.signinangela
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.angelasaez.registroangela.ui.RegistroAngelaContent
-import com.angelasaez.registroangela.ui.screens.registroAngela.RegistroAngela
+import com.angelasaez.signinangela.ui.SignInAngelaContent
+import com.angelasaez.signinangela.ui.screens.signinAngela.SignInAngela
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            RegistroAngelaContent { modifier ->
-                RegistroAngela(modifier)
+            SignInAngelaContent { modifier ->
+                SignInAngela(modifier)
             }
         }
     }
