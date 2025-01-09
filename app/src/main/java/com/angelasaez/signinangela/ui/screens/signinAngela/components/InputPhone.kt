@@ -12,12 +12,18 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.angelasaez.signinangela.ui.screens.common.CustomSpacer
 
 @Composable
 fun InputPhone() {
 
     var phoneValue by rememberSaveable { mutableStateOf("") }
+    val phoneRegex = Regex("^\\d{9}$")  // Validación para 9 dígitos numéricos
+    var errorMessage by rememberSaveable { mutableStateOf("") }
+
+    val isPhoneValid = errorMessage.isEmpty()
 
     Row(
         modifier = Modifier
@@ -27,9 +33,22 @@ fun InputPhone() {
     ) {
         OutlinedTextField(
             value = phoneValue,
-            onValueChange = { phoneValue = it},
-            label = { Text(" Introduce tu teléfono") }
+            onValueChange = { phoneValue = it
+                errorMessage = if (it.matches(phoneRegex)) {
+                    ""
+                } else {
+                    "Teléfono inválido. Debe contener 9 dígitos."
+                }},
+            label = { Text(" Introduce tu teléfono") },
+            isError = errorMessage.isNotEmpty()
         )
-
     }
+    if (errorMessage.isNotEmpty()) {
+        Text(
+            text = errorMessage,
+            color = Color.Red,
+            modifier = Modifier.padding(start = 15.dp, top = 5.dp)
+        )
+    }
+    CustomSpacer(20)
 }
