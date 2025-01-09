@@ -5,7 +5,6 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DatePicker
@@ -32,7 +31,6 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun InputBirth() {
 
-    var dateBirthValue by rememberSaveable { mutableStateOf("") }
     val datePickerState = rememberDatePickerState(initialSelectedDateMillis = Calendar.getInstance().timeInMillis)
     var formattedDate by rememberSaveable { mutableStateOf("No seleccionada") }
 
